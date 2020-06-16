@@ -1,6 +1,12 @@
+@import "./scss/fonts.scss";
+
+body {
+	font-family: "Montserrat", sans-serif;
+}
+
 $primary-color: white;
 $bg: black;
 h1 {
-  color: $primary-color;
-  background-color: $bg;
+	color: $primary-color;
+	background-color: $bg;
 }
