@@ -11,7 +11,9 @@
 		"start": "parcel src/index.html",
 		"build-prod": "parcel build src/index.html --out-dir docs --public-url ./"
 	},
-	"dependencies": {},
+	"dependencies": {
+		"tiny-slider": "^2.9.2"
+	},
 	"devDependencies": {
 		"autoprefixer": "^9.8.0",
 		"parcel-bundler": "^1.12.4",

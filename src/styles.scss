@@ -2,6 +2,7 @@
 
 body {
 	font-family: "Montserrat", sans-serif;
+	background-color: #555;
 }
 
 $primary-color: white;
@@ -9,4 +10,34 @@ $bg: black;
 h1 {
 	color: $primary-color;
 	background-color: $bg;
+	text-shadow: 2px -2px 0px rgba(255, 255, 255, 0.5), 4px -4px 0px rgba(255, 255, 255, 0.2);
+}
+
+.slid1 {
+	width: 600px;
+	height: 300px;
+	border: 2px solid gray;
+	background-color: lightseagreen;
+}
+
+.slid2 {
+	width: 600px;
+	height: 300px;
+	border: 2px solid gray;
+	background-color: indianred;
+}
+.slid3 {
+	width: 600px;
+	height: 300px;
+	border: 2px solid gray;
+	background-color: lightblue;
+}
+
+.my-slider2 > .tns-slide-active ~ .tns-slide-active {
+	opacity: 0.1;
+}
+
+.logo {
+	width: 154px;
+	height: 50px;
 }
