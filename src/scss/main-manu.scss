@@ -1,0 +1,146 @@
+// переменная для с точным значением для анимации скрывания меню
+$header-height: 91px;
+
+.header {
+	background-color: $secondary-color;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	transition: 200ms ease-in-out 0ms;
+	transition-property: top, visibility;
+	z-index: 9;
+}
+
+.header_hide {
+	top: -$header-height;
+	visibility: hidden;
+}
+
+.main-manu {
+	margin: 0 auto;
+	width: 1140px;
+	height: $header-height;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	> * {
+		margin-right: 25px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+// logo
+.main-manu__logo > .icon {
+	width: 154px;
+	height: 50px;
+}
+
+// nav
+.main-manu__nav {
+	height: 100%;
+	flex-grow: 1;
+}
+.main-manu__nav-list {
+	display: flex;
+	justify-content: space-between;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+.main-manu__nav-item {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	height: 100%;
+	list-style: none;
+}
+.main-manu__nav-linc {
+	font-family: "Montserrat", sans-serif;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 17px;
+	text-decoration: none;
+	color: transparentize($text-primary-color, 0.3);
+
+	&:hover,
+	&:focus {
+		color: $primary-color;
+
+		// Не очень удачное дизайнерское решение увеличивать толщину шрифта при наведении(
+		// font-weight: 600;
+	}
+
+	&::before,
+	&::before {
+		content: "";
+		position: absolute;
+		right: 6px;
+		bottom: 0;
+		left: 6px;
+		height: 3px;
+		border-radius: 4px;
+		background-color: $primary-color;
+
+		visibility: hidden;
+		opacity: 0;
+		transition: 150ms ease-in-out 0ms;
+		transition-property: visibility, opacity;
+	}
+	&:hover::before,
+	&:focus::before {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+// mail phone
+.main-manu__mail-icon,
+.main-manu__phone-icon {
+	width: 24px;
+	height: 24px;
+	margin-right: 8px;
+}
+
+.main-manu__mail,
+.main-manu__phone {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+}
+
+.main-manu__mail:hover .main-manu__mail-text,
+.main-manu__phone:hover .main-manu__phone-text,
+.main-manu__mail:focus .main-manu__mail-text,
+.main-manu__phone:focus .main-manu__phone-text {
+	color: $primary-color;
+}
+
+.main-manu__mail-text,
+.main-manu__phone-text {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 600;
+	font-size: 13px;
+	line-height: 16px;
+	color: $text-primary-color;
+	transition: color 120ms ease-in-out 0ms;
+}
+
+.main-manu__phone-title-text {
+	display: block;
+	font-family: "Montserrat", sans-serif;
+	font-weight: normal;
+	font-size: 11px;
+	line-height: 13px;
+	color: $primary-color;
+}
+
+.main-manu__phone-text {
+	display: block;
+}

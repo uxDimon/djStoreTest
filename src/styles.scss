@@ -1,18 +1,25 @@
 @import "./scss/fonts.scss";
 
+$primary-color: #397dff;
+$secondary-color: #ebeef5;
+$white-color: #ffffff;
+$text-primary-color: #2b2d3a;
+
+* {
+	box-sizing: border-box;
+}
+
 body {
 	font-family: "Montserrat", sans-serif;
-	background-color: #555;
+	font-style: normal;
+	margin: 0;
+	padding: 0;
+	position: relative;
 }
 
-$primary-color: white;
-$bg: black;
-h1 {
-	color: $primary-color;
-	background-color: $bg;
-	text-shadow: 2px -2px 0px rgba(255, 255, 255, 0.5), 4px -4px 0px rgba(255, 255, 255, 0.2);
-}
+@import "./scss/main-manu.scss";
 
+// ---------------
 .slid1 {
 	width: 600px;
 	height: 300px;

@@ -28,11 +28,11 @@ let scroll = 0;
 
 document.addEventListener("scroll", () => {
 	if (window.pageYOffset > scroll) {
-		header.classList.remove("opa");
+		header.classList.add("header_hide");
 		scroll = window.pageYOffset;
 	}
 	if (window.pageYOffset < scroll) {
-		header.classList.add("opa");
+		header.classList.remove("header_hide");
 		scroll = window.pageYOffset;
 	}
 });
