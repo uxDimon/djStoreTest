@@ -1,0 +1,145 @@
+.slider {
+	position: relative;
+	overflow: hidden;
+	height: 715px;
+	background-color: #505050;
+}
+
+.back-slider__item {
+	width: 100%;
+	height: 715px;
+	position: relative;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: rgba(0, 0, 0, 0.4);
+		z-index: 0;
+	}
+}
+
+.back-slider__content-wrap {
+	position: relative;
+	margin: 0 auto;
+	width: $content-width;
+	padding-top: 214px;
+	z-index: 1;
+}
+
+.back-slider__content {
+	color: $white-color;
+	width: 650px;
+}
+
+.back-slider__title {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 22px;
+	margin-bottom: 11px;
+}
+
+.back-slider__heading {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 600;
+	font-size: 52px;
+	line-height: 63px;
+	margin: 0 0 23px 0;
+}
+
+.back-slider__content-text {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 24px;
+	margin: 23px 0;
+}
+
+.back-slider__button-wrap {
+	margin-top: 55px;
+
+	> * {
+		margin-right: 24px;
+	}
+
+	> *:last-child {
+		margin-right: 0;
+	}
+}
+
+// item-slider
+.slider__item-slider-wrap {
+	position: absolute;
+	top: 289px;
+	right: -160px;
+	width: 676px;
+}
+
+.item-slider {
+	display: flex;
+	align-items: stretch;
+}
+
+.item-slider .tns-slide-active ~ .tns-slide-active {
+	opacity: 0.5;
+}
+
+.item-slider__content-wrap {
+	height: 100%;
+	color: $white-color;
+	padding: 0 34px 0 0;
+	border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.item-slider__number {
+	font-family: "Montserrat", sans-serif;
+	font-weight: bold;
+	font-size: 64px;
+	line-height: 78px;
+	letter-spacing: 0.02em;
+	font-feature-settings: "pnum" on, "lnum" on;
+	color: $primary-color;
+}
+
+.item-slider__content-text {
+	font-family: "Montserrat", sans-serif;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 22px;
+}
+
+// slider-nav-button
+.item-slider__nav-wrap {
+	margin-top: 34px;
+}
+
+.slider-nav-button {
+	width: 32px;
+	height: 32px;
+	background-color: $primary-color;
+	border: none;
+	border-radius: 30px;
+	cursor: pointer;
+
+	> .icon {
+		width: 17px;
+		height: 17px;
+	}
+}
+
+.b-next {
+	padding: 2px 1px 0 0;
+	margin-right: 42px;
+}
+
+.b-prev {
+	padding: 2px 0 0 1px;
+}
+
+.b-next > .icon {
+	transform: rotate(180deg);
+}

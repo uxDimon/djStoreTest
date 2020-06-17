@@ -19,7 +19,7 @@ $header-height: 91px;
 
 .main-manu {
 	margin: 0 auto;
-	width: 1140px;
+	width: $content-width;
 	height: $header-height;
 	display: flex;
 	justify-content: space-between;

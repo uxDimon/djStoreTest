@@ -7,18 +7,22 @@ import { tns } from "tiny-slider/src/tiny-slider";
 
 // настройки слайдера
 var slider1 = tns({
-	container: ".my-slider",
+	container: ".back-slider",
 	items: 1,
+	speed: 600,
 	mode: "gallery",
 	prevButton: ".b-prev",
 	nextButton: ".b-next",
 	nav: false,
 });
 var slider2 = tns({
-	container: ".my-slider2",
+	container: ".item-slider",
 	items: 2,
+	gutter: 38,
+	speed: 300,
 	prevButton: ".b-prev",
 	nextButton: ".b-next",
+	// fixedWidth: 316,
 	nav: false,
 });
 
