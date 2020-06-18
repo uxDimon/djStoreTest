@@ -40,3 +40,29 @@ document.addEventListener("scroll", () => {
 		scroll = window.pageYOffset;
 	}
 });
+
+// Обратный звонок
+const backCall = document.querySelectorAll(".back-call");
+const closeWindow = document.querySelectorAll(".close-window");
+const pupUp = document.querySelector(".pop-up-wrap");
+const pupUpInput = document.querySelector(".pop-up_input");
+const pupUpSuccess = document.querySelector(".pop-up_success");
+for (let i of backCall) {
+	i.addEventListener("click", () => {
+		pupUp.classList.add("pop-up-activ");
+		pupUpInput.classList.add("pop-up-activ");
+	});
+}
+
+for (let i of closeWindow) {
+	i.addEventListener("click", () => {
+		pupUp.classList.remove("pop-up-activ");
+		pupUpInput.classList.remove("pop-up-activ");
+		pupUpSuccess.classList.remove("pop-up-activ");
+	});
+}
+
+document.querySelector(".b_send").addEventListener("click", () => {
+	pupUpInput.classList.remove("pop-up-activ");
+	pupUpSuccess.classList.add("pop-up-activ");
+});

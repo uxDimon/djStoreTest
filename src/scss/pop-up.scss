@@ -1,0 +1,162 @@
+.pop-up-wrap {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	transition: 350ms ease-in-out 0ms;
+	transition-property: visibility, opacity;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.pop-up {
+	position: absolute;
+	width: 540px;
+	padding: 32px 42px 48px;
+	background-color: $white-color;
+	border-radius: 16px;
+	box-shadow: 12px 10px 24px rgba(165, 165, 165, 0.12);
+	transition: 250ms ease-in-out 0ms;
+	transition-property: visibility, opacity;
+	z-index: 2;
+}
+
+.pop-up_input {
+	visibility: hidden;
+	opacity: 0;
+}
+
+.pop-up__close {
+	width: 18px;
+	height: 18px;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+	position: absolute;
+	top: 16px;
+	right: 24px;
+
+	> .icon {
+		width: 18px;
+		height: 18px;
+	}
+}
+
+.pop-up__heading {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 29px;
+	margin: 0 0 10px 0;
+}
+
+.pop-up__prompt {
+	font-family: "Montserrat", sans-serif;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 26px;
+	margin: 0 0 26px 0;
+	display: block;
+}
+
+.pop-up__input-text {
+	width: 100%;
+	margin-bottom: 24px;
+}
+
+.pop-up__input-mail {
+	width: 100%;
+	margin-bottom: 32px;
+}
+
+.pop-up__input-check {
+	margin-bottom: 15px;
+}
+
+.input-check__text {
+	font-family: "Montserrat", sans-serif;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 17px;
+}
+
+.pop-up__button {
+	width: 100%;
+}
+
+// pop-up_success
+.pop-up_success {
+	visibility: hidden;
+	opacity: 0;
+}
+
+.pop-up__success-icon {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 160px;
+
+	margin-top: 4px;
+	margin-bottom: 24px;
+
+	> .icon {
+		width: 47px;
+		height: 47px;
+		z-index: 3;
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		width: 77px;
+		height: 77px;
+		border-radius: 100px;
+		background-color: $primary-color;
+		z-index: 2;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		width: 160px;
+		height: 160px;
+		border-radius: 200px;
+		background-color: #f2f4f7;
+		border: 1px solid $primary-color;
+		z-index: 1;
+	}
+}
+
+.pop-up__success-text {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 29px;
+	text-align: center;
+	margin: 0 0 32px 0;
+}
+
+.pop-up-back-area {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(126, 126, 126, 0.4);
+	z-index: 1;
+}
+
+// Должны быть в самом низу
+.pop-up-activ {
+	visibility: visible;
+	opacity: 1;
+}

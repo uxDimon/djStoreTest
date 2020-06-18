@@ -54,7 +54,7 @@
 									Профессиональное оборудование для конференц-залов предназначено для проведения и организации презентаций, совещаний, бизнес-тренингов и онлайн-трансляции контента.
 								</p>
 								<div class="back-slider__button-wrap">
-									<button class="button button_ghost back-slider__button">Обратный звонок</button>
+									<button class="button button_ghost back-slider__button back-call">Обратный звонок</button>
 									<button class="button back-slider__button">Заполнить бриф</button>
 								</div>
 							</div>
@@ -71,7 +71,7 @@
 									Профессиональное оборудование для конференц-залов предназначено для проведения и организации презентаций, совещаний, бизнес-тренингов и онлайн-трансляции контента.
 								</p>
 								<div class="back-slider__button-wrap">
-									<button class="button button_ghost back-slider__button">Обратный звонок</button>
+									<button class="button button_ghost back-slider__button back-call">Обратный звонок</button>
 									<button class="button back-slider__button">Заполнить бриф</button>
 								</div>
 							</div>
@@ -88,7 +88,7 @@
 									Профессиональное оборудование для конференц-залов предназначено для проведения и организации презентаций, совещаний, бизнес-тренингов и онлайн-трансляции контента.
 								</p>
 								<div class="back-slider__button-wrap">
-									<button class="button button_ghost back-slider__button">Обратный звонок</button>
+									<button class="button button_ghost back-slider__button back-call">Обратный звонок</button>
 									<button class="button back-slider__button">Заполнить бриф</button>
 								</div>
 							</div>
@@ -105,7 +105,7 @@
 									Профессиональное оборудование для конференц-залов предназначено для проведения и организации презентаций, совещаний, бизнес-тренингов и онлайн-трансляции контента.
 								</p>
 								<div class="back-slider__button-wrap">
-									<button class="button button_ghost back-slider__button">Обратный звонок</button>
+									<button class="button button_ghost back-slider__button back-call">Обратный звонок</button>
 									<button class="button back-slider__button">Заполнить бриф</button>
 								</div>
 							</div>
@@ -167,18 +167,51 @@
 		</section>
 
 		<svg class="icon">
-			<use xlink:href="./svg/svgsprit.svg#check"></use>
-		</svg>
-		<svg class="icon">
-			<use xlink:href="./svg/svgsprit.svg#close"></use>
-		</svg>
-
-		<svg class="icon">
 			<use xlink:href="./svg/svgsprit.svg#plus"></use>
 		</svg>
 		<svg class="icon">
 			<use xlink:href="./svg/svgsprit.svg#speaker1"></use>
 		</svg>
+
+		<button class="button back-call11">Обратный звонок</button>
+
+		<!-- Pop-up обратный звонок -->
+		<div class="pop-up-wrap">
+			<div class="pop-up pop-up_input">
+				<button class="pop-up__close close-window">
+					<svg class="icon">
+						<use xlink:href="./svg/svgsprit.svg#close"></use>
+					</svg>
+				</button>
+				<h3 class="pop-up__heading">Готовы обсудить проект?</h3>
+				<span class="pop-up__prompt">Заполните форму ниже и мы свяжемся с вами.</span>
+				<input type="text" name="userName" class="pop-up__input-text input-text" placeholder="Имя*" />
+				<input type="email" name="userMail" class="pop-up__input-mail input-text" placeholder="Телефон*" />
+				<div class="pop-up__input-check input-check">
+					<input class="input-check__custom-checkbox" type="checkbox" id="personalData" name="personalData" />
+					<label for="personalData" class="input-check__text">Я согласен с условиями обработки <a href="#">персональных данных</a></label>
+				</div>
+				<button class="pop-up__button button b_send">Отправить</button>
+			</div>
+			<div class="pop-up pop-up_success">
+				<button class="pop-up__close close-window">
+					<svg class="icon">
+						<use xlink:href="./svg/svgsprit.svg#close"></use>
+					</svg>
+				</button>
+				<div class="pop-up__success-icon">
+					<svg class="icon">
+						<use xlink:href="./svg/svgsprit.svg#check"></use>
+					</svg>
+				</div>
+				<p class="pop-up__success-text">
+					Ваша заявка успешно отправлена.<br />
+					Ожидайте звонка в ближайшее время!
+				</p>
+				<button class="button pop-up__button close-window">Ok</button>
+			</div>
+			<div class="pop-up-back-area close-window"></div>
+		</div>
 
 		<script src="index.js"></script>
 	</body>

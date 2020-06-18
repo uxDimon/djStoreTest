@@ -17,6 +17,16 @@ body {
 	margin: 0;
 	padding: 0;
 	position: relative;
+	color: $text-primary-color;
+}
+
+a {
+	color: $primary-color;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
 }
 
 // button
@@ -50,8 +60,31 @@ body {
 	box-shadow: none;
 }
 
+// input
+.input-text {
+	height: 48px;
+	font-family: "Montserrat", sans-serif;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 18px;
+	color: $text-primary-color;
+	background-color: $white-color;
+	padding: 0 15px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 9px;
+
+	&::placeholder {
+		color: transparentize($text-primary-color, 0.5);
+	}
+
+	&:focus {
+		border-color: rgba(0, 0, 0, 0.6);
+	}
+}
+
 @import "./scss/main-manu.scss";
 @import "./scss/slider.scss";
+@import "./scss/pop-up.scss";
 
 // ---------------
 .slid1 {
