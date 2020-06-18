@@ -1,0 +1,251 @@
+.speaker-block {
+	width: 100%;
+	background-color: #dae3f6;
+}
+
+.speaker-wrap {
+	width: 100%;
+	max-width: 1920px;
+	margin: 0 auto;
+	display: flex;
+}
+
+.speaker-img {
+	width: 50%;
+	height: 620px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.speaker-points {
+	width: 960px;
+	height: 620px;
+	position: relative;
+	background: url("./img/speaker-points-min.jpg") center no-repeat;
+}
+
+.plus-title__wrap {
+	width: 73px;
+	height: 73px;
+	position: absolute;
+	top: 73px;
+	left: 172px;
+}
+
+.plus-title {
+	width: 73px;
+	height: 73px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+
+	&:hover::before {
+		animation-iteration-count: infinite;
+	}
+
+	> .icon {
+		position: absolute;
+		width: 9px;
+		height: 9px;
+		z-index: 3;
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		width: 73px;
+		height: 73px;
+		background-color: transparentize($primary-color, 0.85);
+		border: 1px solid $primary-color;
+		border-radius: 100px;
+		z-index: 1;
+
+		animation: point-wave 1800ms ease-in-out 0ms 1 backwards;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		width: 27px;
+		height: 27px;
+		background-color: $primary-color;
+		border-radius: 100px;
+		z-index: 2;
+	}
+}
+
+.plus-title_no {
+	width: 73px;
+	height: 73px;
+	position: absolute;
+	top: 73px;
+	left: 689px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	> .icon {
+		position: absolute;
+		width: 9px;
+		height: 9px;
+		z-index: 3;
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		width: 73px;
+		height: 73px;
+		background-color: transparentize($primary-color, 0.85);
+		border: 1px solid $primary-color;
+		border-radius: 100px;
+		z-index: 1;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		width: 27px;
+		height: 27px;
+		border: 1px solid $primary-color;
+		border-radius: 100px;
+		z-index: 2;
+	}
+}
+
+@keyframes point-wave {
+	from {
+		width: 20px;
+		height: 20px;
+	}
+
+	70% {
+		opacity: 1;
+	}
+
+	to {
+		width: 73px;
+		height: 73px;
+		opacity: 0;
+	}
+}
+
+.plus-title__block {
+	flex-shrink: 0;
+	bottom: calc(50% + 16px);
+	left: calc(50% + -350px / 2);
+	z-index: 4;
+}
+
+// title-block
+.title-block {
+	position: absolute;
+	width: 350px;
+	padding: 15px 24px;
+	border-radius: 10px;
+	background-color: $white-color;
+
+	visibility: hidden;
+	opacity: 0;
+	transition: 250ms ease-in-out 0ms;
+	transition-property: visibility, opacity;
+
+	&::before {
+		content: "";
+		position: absolute;
+		bottom: -6px;
+		left: calc(50% - 8px);
+		transform: rotate(45deg);
+		border-radius: 2px;
+		width: 16px;
+		height: 16px;
+		background-color: inherit;
+	}
+}
+
+.title-block__close {
+	padding: 0;
+	margin: 0;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	position: absolute;
+	top: 12px;
+	right: 16px;
+
+	> .icon {
+		width: 12px;
+		height: 12px;
+	}
+}
+
+.title-block__heading-icon {
+	margin-right: 20px;
+	margin-bottom: 8px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.title-block__heading {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 24px;
+	margin: 0;
+}
+
+.title-block__icon {
+	width: 44px;
+	height: 44px;
+	margin-top: 1px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: $primary-color;
+	box-shadow: 4px 6px 12px transparentize($primary-color, 0.88);
+	border-radius: 8px;
+
+	> .icon {
+		width: 28px;
+		height: 28px;
+	}
+}
+
+.title-block__list {
+	padding: 0;
+	margin: 0;
+}
+
+.title-block__list-item {
+	list-style: none;
+	font-family: "Montserrat", sans-serif;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 17px;
+	margin-bottom: 10px;
+	display: flex;
+	align-items: center;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&::before {
+		content: "";
+		box-sizing: border-box;
+		width: 16px;
+		height: 16px;
+		margin-right: 8px;
+		background-color: $primary-color;
+		border: 5px solid #e2ecff;
+		border-radius: 20px;
+	}
+}
+
+.title-block-active {
+	visibility: visible;
+	opacity: 1;
+}

@@ -2,6 +2,7 @@
 import "./styles.scss";
 
 // Подключает слайдер
+// https://github.com/ganlanyuan/tiny-slider
 import "../node_modules/tiny-slider/src/tiny-slider.scss";
 import { tns } from "tiny-slider/src/tiny-slider";
 
@@ -22,7 +23,6 @@ var slider2 = tns({
 	speed: 300,
 	prevButton: ".b-prev",
 	nextButton: ".b-next",
-	// fixedWidth: 316,
 	nav: false,
 });
 
@@ -66,3 +66,16 @@ document.querySelector(".b_send").addEventListener("click", () => {
 	pupUpInput.classList.remove("pop-up-activ");
 	pupUpSuccess.classList.add("pop-up-activ");
 });
+
+// speaker-points
+const speakerPoints = document.querySelectorAll(".plus-title__wrap");
+for (let i of speakerPoints) {
+	const titleBlock = i.querySelector(".title-block");
+	const close = i.querySelector(".title-block__close");
+	i.querySelector(".plus-title").addEventListener("click", () => {
+		titleBlock.classList.add("title-block-active");
+	});
+	close.addEventListener("click", () => {
+		titleBlock.classList.remove("title-block-active");
+	});
+}
