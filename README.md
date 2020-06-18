@@ -1,4 +1,4 @@
-# dj-store-test
+# dj-store-test [DEMO](https://uxdimon.github.io/djStoreTest/)
 
 Empty project.
 
@@ -31,4 +31,3 @@ node dist/bundle.js
 ## Credits
 
 Made with [createapp.dev](https://createapp.dev/)
-
