@@ -15,6 +15,11 @@ var slider1 = tns({
 	prevButton: ".b-prev",
 	nextButton: ".b-next",
 	nav: false,
+	responsive: {
+		1350: {
+			touch: false,
+		},
+	},
 });
 var slider2 = tns({
 	container: ".item-slider",
@@ -24,21 +29,33 @@ var slider2 = tns({
 	prevButton: ".b-prev",
 	nextButton: ".b-next",
 	nav: false,
+	touch: false,
 });
 
 // скрывает меню при скроле
 const header = document.querySelector(".header");
 let scroll = 0;
+let burgerMenuActive = false;
 
 document.addEventListener("scroll", () => {
 	if (window.pageYOffset > scroll) {
 		header.classList.add("header_hide");
 		scroll = window.pageYOffset;
 	}
-	if (window.pageYOffset < scroll) {
+	if (window.pageYOffset < scroll || burgerMenuActive) {
 		header.classList.remove("header_hide");
 		scroll = window.pageYOffset;
 	}
+});
+
+// burgerMenu
+const hamburger = document.querySelector(".hamburger");
+const burgerMenu = document.querySelector(".burger-menu");
+
+hamburger.addEventListener("click", () => {
+	hamburger.classList.toggle("is-active");
+	burgerMenu.classList.toggle("burger-menu_active");
+	burgerMenuActive = !burgerMenuActive;
 });
 
 // Обратный звонок

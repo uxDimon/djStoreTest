@@ -7,6 +7,7 @@ $header-height: 91px;
 	top: 0;
 	right: 0;
 	left: 0;
+	padding: 0 15px;
 	transition: 300ms ease-in-out 0ms;
 	transition-property: top, visibility;
 	z-index: 9;
@@ -19,7 +20,7 @@ $header-height: 91px;
 
 .main-manu {
 	margin: 0 auto;
-	width: $content-width;
+	max-width: $content-width;
 	height: $header-height;
 	display: flex;
 	justify-content: space-between;
@@ -143,4 +144,130 @@ $header-height: 91px;
 
 .main-manu__phone-text {
 	display: block;
+}
+
+// burger-menu
+.hamburger {
+	display: none;
+}
+
+.burger-menu {
+	position: absolute;
+	height: calc(100vh - 78px);
+	overflow-y: scroll;
+	top: 100%;
+	right: 0;
+	left: 0;
+	padding: 0 15px 20px;
+
+	background-color: inherit;
+	visibility: hidden;
+	opacity: 0;
+
+	transition: 200ms ease-in-out 0ms;
+	transition-property: visibility, opacity;
+}
+
+.burger-menu_active {
+	visibility: visible;
+	opacity: 1;
+}
+
+.burger-menu__nav {
+	margin-bottom: 32px;
+}
+
+.burger-menu__nav-list {
+	margin: 0;
+	padding: 0;
+}
+
+.burger-menu__nav-item {
+	list-style: none;
+}
+
+.burger-menu__nav-linc {
+	display: flex;
+	align-items: center;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 22px;
+	text-decoration: none;
+	color: $text-primary-color;
+	padding: 24px 0 25px;
+	border-bottom: 1px solid transparentize($text-primary-color, 0.9);
+
+	> .icon {
+		width: 24px;
+		height: 24px;
+		margin-right: 24px;
+		fill: $text-primary-color;
+	}
+
+	&:hover,
+	&:active {
+		color: $primary-color;
+
+		> .icon {
+			fill: $primary-color;
+		}
+	}
+}
+
+.burger-menu__button {
+	width: 100%;
+	margin-bottom: 32px;
+}
+
+.burger-menu__mail-text {
+	display: blockv;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	font-size: 22px;
+	line-height: 27px;
+	margin-bottom: 14px;
+}
+
+.burger-menu__mail {
+	display: flex;
+	align-items: center;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 22px;
+	text-decoration: none;
+	color: $primary-color;
+
+	> .icon {
+		width: 24px;
+		height: 24px;
+		margin-right: 16px;
+	}
+}
+
+// адаптивка
+@media screen and (max-width: 1080px) {
+	.main-manu__phone {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 930px) {
+	.header_hide {
+		top: -78px;
+	}
+
+	.main-manu {
+		height: 78px;
+	}
+
+	.main-manu__nav,
+	.main-manu__mail {
+		display: none;
+	}
+
+	.hamburger {
+		display: block;
+	}
 }

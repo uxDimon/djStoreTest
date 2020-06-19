@@ -1,4 +1,5 @@
 @import "./scss/fonts.scss";
+@import "./scss/hamburgers.scss";
 
 $primary-color: #397dff;
 $secondary-color: #ebeef5;
@@ -12,6 +13,7 @@ $content-width: 1140px;
 }
 
 body {
+	min-width: 375px;
 	font-family: "Montserrat", sans-serif;
 	font-style: normal;
 	margin: 0;
@@ -20,13 +22,17 @@ body {
 	color: $text-primary-color;
 }
 
-a {
+p > a {
 	color: $primary-color;
 	text-decoration: none;
 
 	&:hover {
 		text-decoration: underline;
 	}
+}
+
+.icon {
+	fill: $text-primary-color;
 }
 
 // button
@@ -60,6 +66,17 @@ a {
 	box-shadow: none;
 }
 
+@media screen and (max-width: 650px) {
+	.button {
+		min-width: auto;
+		height: 40px;
+		padding: 0 14px;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 17px;
+	}
+}
+
 // input
 .input-text {
 	height: 48px;
@@ -86,33 +103,3 @@ a {
 @import "./scss/slider.scss";
 @import "./scss/pop-up.scss";
 @import "./scss/speaker-block.scss";
-
-// ---------------
-.slid1 {
-	width: 600px;
-	height: 300px;
-	border: 2px solid gray;
-	background-color: lightseagreen;
-}
-
-.slid2 {
-	width: 600px;
-	height: 300px;
-	border: 2px solid gray;
-	background-color: indianred;
-}
-.slid3 {
-	width: 600px;
-	height: 300px;
-	border: 2px solid gray;
-	background-color: lightblue;
-}
-
-.my-slider2 > .tns-slide-active ~ .tns-slide-active {
-	opacity: 0.1;
-}
-
-.logo {
-	width: 154px;
-	height: 50px;
-}

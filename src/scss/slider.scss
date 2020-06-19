@@ -1,7 +1,6 @@
 .slider {
 	position: relative;
 	overflow: hidden;
-	height: 715px;
 	background-color: #505050;
 }
 
@@ -26,7 +25,7 @@
 .back-slider__content-wrap {
 	position: relative;
 	margin: 0 auto;
-	width: $content-width;
+	max-width: $content-width;
 	padding-top: 214px;
 	z-index: 1;
 }
@@ -143,4 +142,65 @@
 
 .b-next > .icon {
 	transform: rotate(180deg);
+}
+
+// адаптивка
+@media screen and (max-width: 1350px) {
+	.back-slider__item {
+		padding: 0 15px;
+	}
+
+	.slider__item-slider-wrap {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 930px) {
+	.back-slider__item {
+		height: auto;
+		min-height: 550px;
+	}
+
+	.back-slider__content-wrap {
+		padding-top: 170px;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	.back-slider__item {
+		min-height: 360px;
+	}
+
+	.back-slider__content-wrap {
+		padding-top: 107px;
+		padding-bottom: 34px;
+	}
+
+	.back-slider__content {
+		width: 100%;
+	}
+
+	.back-slider__title {
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 17px;
+	}
+
+	.back-slider__heading {
+		font-size: 30px;
+		line-height: 37px;
+	}
+
+	.back-slider__content-text {
+		font-size: 14px;
+		line-height: 21px;
+	}
+
+	.back-slider__button-wrap {
+		margin-top: 34px;
+
+		> * {
+			margin-right: 14px;
+		}
+	}
 }
