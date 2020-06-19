@@ -64,6 +64,7 @@ const closeWindow = document.querySelectorAll(".close-window");
 const pupUp = document.querySelector(".pop-up-wrap");
 const pupUpInput = document.querySelector(".pop-up_input");
 const pupUpSuccess = document.querySelector(".pop-up_success");
+
 for (let i of backCall) {
 	i.addEventListener("click", () => {
 		pupUp.classList.add("pop-up-activ");
@@ -89,10 +90,36 @@ const speakerPoints = document.querySelectorAll(".plus-title__wrap");
 for (let i of speakerPoints) {
 	const titleBlock = i.querySelector(".title-block");
 	const close = i.querySelector(".title-block__close");
-	i.querySelector(".plus-title").addEventListener("click", () => {
-		titleBlock.classList.add("title-block-active");
+	const plusTitle = i.querySelector(".plus-title");
+	let plusTitleActive = false;
+
+	function daaClass(event) {
+		if (!titleBlock.contains(event.target)) {
+			titleBlock.classList.remove("title-block-active");
+			document.removeEventListener("click", daaClass);
+			plusTitleActive = false;
+		}
+	}
+
+	plusTitle.addEventListener("click", () => {
+		if (!plusTitleActive) {
+			titleBlock.classList.add("title-block-active");
+			plusTitleActive = true;
+			setTimeout(() => {
+				document.addEventListener("click", daaClass);
+			}, 50);
+		} else {
+			titleBlock.classList.remove("title-block-active");
+			document.removeEventListener("click", daaClass);
+			plusTitleActive = false;
+		}
 	});
+
 	close.addEventListener("click", () => {
 		titleBlock.classList.remove("title-block-active");
+		if (plusTitleActive) {
+			document.removeEventListener("click", daaClass);
+		}
+		plusTitleActive = false;
 	});
 }
