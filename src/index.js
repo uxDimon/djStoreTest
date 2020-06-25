@@ -1,6 +1,12 @@
 // Подключает scss
 import "./styles.scss";
 
+// маска для input
+import Inputmask from "inputmask";
+let selector = document.querySelector(".inputPhone");
+let im = new Inputmask("+7 (999) 999-99-99");
+im.mask(selector);
+
 // Подключает слайдер
 // https://github.com/ganlanyuan/tiny-slider
 import "../node_modules/tiny-slider/src/tiny-slider.scss";
@@ -87,10 +93,10 @@ for (let i of closeWindow) {
 	});
 }
 
-document.querySelector(".b_send").addEventListener("click", () => {
-	pupUpInput.classList.remove("pop-up-activ");
-	pupUpSuccess.classList.add("pop-up-activ");
-});
+// document.querySelector(".b_send").addEventListener("click", () => {
+// 	pupUpInput.classList.remove("pop-up-activ");
+// 	pupUpSuccess.classList.add("pop-up-activ");
+// });
 
 // speaker-points
 const speakerPoints = document.querySelectorAll(".plus-title__wrap");

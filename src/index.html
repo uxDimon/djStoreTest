@@ -284,13 +284,15 @@
 				</button>
 				<h3 class="pop-up__heading">Готовы обсудить проект?</h3>
 				<span class="pop-up__prompt">Заполните форму ниже и мы свяжемся с вами.</span>
-				<input type="text" name="userName" class="pop-up__input-text input-text" placeholder="Имя*" />
-				<input type="email" name="userMail" class="pop-up__input-mail input-text" placeholder="Телефон*" />
-				<div class="pop-up__input-check input-check">
-					<input class="input-check__custom-checkbox" type="checkbox" id="personalData" name="personalData" />
-					<label for="personalData" class="input-check__text">Я согласен с условиями обработки <a href="#" target="_blank">персональных данных</a></label>
-				</div>
-				<button class="pop-up__button button b_send">Отправить</button>
+				<form action="" method="post">
+					<input type="text" name="userName" class="pop-up__input-text input-text" placeholder="Имя*" required />
+					<input type="tel" name="userPhone" class="pop-up__input-text input-text inputPhone" placeholder="Телефон*" required />
+					<div class="pop-up__input-check input-check">
+						<input class="input-check__custom-checkbox" type="checkbox" id="personalData" name="personalData" />
+						<label for="personalData" class="input-check__text">Я согласен с условиями обработки <a href="#" target="_blank">персональных данных</a></label>
+					</div>
+					<input type="submit" value="Отправить" class="pop-up__button button b_send" />
+				</form>
 			</div>
 			<div class="pop-up pop-up_success">
 				<button class="pop-up__close close-window">

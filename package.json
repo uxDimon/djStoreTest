@@ -12,6 +12,7 @@
 		"build-prod": "parcel build src/index.html --out-dir docs --public-url ./"
 	},
 	"dependencies": {
+		"inputmask": "^5.0.3",
 		"tiny-slider": "^2.9.2"
 	},
 	"devDependencies": {
