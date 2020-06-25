@@ -4,7 +4,14 @@ import "./styles.scss";
 // маска для input
 import Inputmask from "inputmask";
 let selector = document.querySelector(".inputPhone");
-let im = new Inputmask("+7 (999) 999-99-99");
+let im = new Inputmask("+7 (999) 999-99-99", {
+	oncomplete: () => {
+		phoneComplete = true;
+	},
+	onincomplete: () => {
+		phoneComplete = false;
+	},
+});
 im.mask(selector);
 
 // Подключает слайдер
@@ -95,14 +102,21 @@ for (let i of closeWindow) {
 
 const userName = document.querySelector("#userName");
 const userPhone = document.querySelector("#userPhone");
+let phoneComplete = false;
 document.querySelector(".b_send").addEventListener("click", () => {
+	if (!phoneComplete) {
+		userPhone.focus();
+		userPhone.setCustomValidity("Укажите полностью номер телефона.");
+	} else {
+		userPhone.setCustomValidity("");
+	}
 	if (userName.validity.valid && userPhone.validity.valid) {
+		userPhone.setCustomValidity("");
 		pupUpInput.classList.remove("pop-up-activ");
 		pupUpSuccess.classList.add("pop-up-activ");
 
 		console.log("Имя " + userName.value);
 		console.log("Телефон " + userPhone.value);
-		// alert("Имя" + userName.value + " Телефон" + userPhone.value);
 
 		setTimeout(() => {
 			userName.value = "";
