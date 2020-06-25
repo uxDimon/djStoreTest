@@ -93,10 +93,23 @@ for (let i of closeWindow) {
 	});
 }
 
-// document.querySelector(".b_send").addEventListener("click", () => {
-// 	pupUpInput.classList.remove("pop-up-activ");
-// 	pupUpSuccess.classList.add("pop-up-activ");
-// });
+const userName = document.querySelector("#userName");
+const userPhone = document.querySelector("#userPhone");
+document.querySelector(".b_send").addEventListener("click", () => {
+	if (userName.validity.valid && userPhone.validity.valid) {
+		pupUpInput.classList.remove("pop-up-activ");
+		pupUpSuccess.classList.add("pop-up-activ");
+
+		console.log("Имя " + userName.value);
+		console.log("Телефон " + userPhone.value);
+		// alert("Имя" + userName.value + " Телефон" + userPhone.value);
+
+		setTimeout(() => {
+			userName.value = "";
+			userPhone.value = "";
+		}, 200);
+	}
+});
 
 // speaker-points
 const speakerPoints = document.querySelectorAll(".plus-title__wrap");

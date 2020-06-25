@@ -284,9 +284,9 @@
 				</button>
 				<h3 class="pop-up__heading">Готовы обсудить проект?</h3>
 				<span class="pop-up__prompt">Заполните форму ниже и мы свяжемся с вами.</span>
-				<form action="" method="post">
-					<input type="text" name="userName" class="pop-up__input-text input-text" placeholder="Имя*" required />
-					<input type="tel" name="userPhone" class="pop-up__input-text input-text inputPhone" placeholder="Телефон*" required />
+				<form id="myform" onsubmit="return false;">
+					<input type="text" id="userName" name="userName" class="pop-up__input-text input-text" placeholder="Имя*" required />
+					<input type="tel" minlength="10" id="userPhone" name="userPhone" class="pop-up__input-text input-text inputPhone" placeholder="Телефон*" required />
 					<div class="pop-up__input-check input-check">
 						<input class="input-check__custom-checkbox" type="checkbox" id="personalData" name="personalData" />
 						<label for="personalData" class="input-check__text">Я согласен с условиями обработки <a href="#" target="_blank">персональных данных</a></label>
@@ -307,7 +307,7 @@
 				</div>
 				<p class="pop-up__success-text">
 					Ваша заявка успешно отправлена.<br />
-					Ожидайте звонка в ближайшее время!
+					Данные формы в консоли
 				</p>
 				<button class="button pop-up__button close-window">Ok</button>
 			</div>
