@@ -13,13 +13,17 @@ $content-width: 1140px;
 }
 
 body {
-	min-width: 375px;
+	min-width: 320px;
 	font-family: "Montserrat", sans-serif;
 	font-style: normal;
 	margin: 0;
 	padding: 0;
 	position: relative;
 	color: $text-primary-color;
+}
+
+.no-scroll {
+	overflow: hidden;
 }
 
 p > a {

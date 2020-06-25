@@ -163,6 +163,18 @@
 	z-index: 1;
 }
 
+// адаптивка
+@media screen and (max-width: 530px) {
+	.pop-up {
+		padding: 24px 15px 30px;
+	}
+
+	.pop-up__close {
+		top: 12px;
+		right: 12px;
+	}
+}
+
 // Должны быть в самом низу
 .pop-up-activ {
 	visibility: visible;

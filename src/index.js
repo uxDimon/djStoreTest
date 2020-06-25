@@ -10,13 +10,16 @@ import { tns } from "tiny-slider/src/tiny-slider";
 var slider1 = tns({
 	container: ".back-slider",
 	items: 1,
+	mode: "gallery",
 	speed: 600,
 	mode: "gallery",
 	prevButton: ".b-prev",
 	nextButton: ".b-next",
 	nav: false,
+	mouseDrag: true,
 	responsive: {
 		1350: {
+			mouseDrag: false,
 			touch: false,
 		},
 	},
@@ -51,10 +54,12 @@ document.addEventListener("scroll", () => {
 // burgerMenu
 const hamburger = document.querySelector(".hamburger");
 const burgerMenu = document.querySelector(".burger-menu");
+const body = document.querySelector("body");
 
 hamburger.addEventListener("click", () => {
 	hamburger.classList.toggle("is-active");
 	burgerMenu.classList.toggle("burger-menu_active");
+	body.classList.toggle("no-scroll");
 	burgerMenuActive = !burgerMenuActive;
 });
 
@@ -69,6 +74,7 @@ for (let i of backCall) {
 	i.addEventListener("click", () => {
 		pupUp.classList.add("pop-up-activ");
 		pupUpInput.classList.add("pop-up-activ");
+		body.classList.add("no-scroll");
 	});
 }
 
@@ -77,6 +83,7 @@ for (let i of closeWindow) {
 		pupUp.classList.remove("pop-up-activ");
 		pupUpInput.classList.remove("pop-up-activ");
 		pupUpSuccess.classList.remove("pop-up-activ");
+		body.classList.remove("no-scroll");
 	});
 }
 

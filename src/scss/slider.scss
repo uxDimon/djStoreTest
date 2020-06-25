@@ -9,6 +9,7 @@
 	height: 715px;
 	position: relative;
 	background: center no-repeat;
+	background-size: cover;
 
 	&::after {
 		content: "";
